@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #2663b2;
+  --color-primary-600: #1d4d8a;
+  --color-primary-700: #163a69;
+  --color-primary-800: #122b4d;
+  --color-primary-900: #0d1d33;
+  --color-primary-950: #060e19;
+
+  --color-secondary-50: #f5f6f9;
+  --color-secondary-100: #eaebf2;
+  --color-secondary-200: #d1d3e2;
+  --color-secondary-300: #acafc9;
+  --color-secondary-400: #8185ad;
+  --color-secondary-500: #3b3e5f;
+  --color-secondary-600: #2a2c42;
+  --color-secondary-700: #1a1b2b;
+  --color-secondary-800: #11121d;
+  --color-secondary-900: #090a11;
+  --color-secondary-950: #040509;
+
+  --color-accent-50: #f0f7fb;
+  --color-accent-100: #e1f0f8;
+  --color-accent-200: #bae0f1;
+  --color-accent-300: #a3c2d6;
+  --color-accent-400: #8dc1de;
+  --color-accent-500: #7ba7c4;
+  --color-accent-600: #5c8cae;
+  --color-accent-700: #4a7494;
+  --color-accent-800: #3b5c77;
+  --color-accent-900: #2f495f;
+  --color-accent-950: #192a38;
+
+  --font-sans: 'Inter', sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  }
+
+  .blob-shape {
+    border-radius: 41% 59% 70% 30% / 32% 40% 60% 68%;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary-600 hover:bg-primary-700 text-white text-[15px] font-bold rounded-xl transition-all duration-300 shadow-[0_4px_14px_0_rgba(38,99,178,0.3)] hover:shadow-[0_6px_20px_rgba(38,99,178,0.2)] hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-white/5 hover:bg-white/10 border border-white/10 text-white text-[15px] font-bold rounded-xl transition-all duration-300 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer;
+  }
+
+  .btn-light {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-white hover:bg-slate-50 border border-slate-200 text-slate-900 text-[15px] font-bold rounded-xl transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer;
+  }
+
+  .section-badge {
+    @apply inline-flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200 shadow-sm text-slate-600 font-bold uppercase text-[12px] tracking-wide;
+  }
+
+  .section-h3 {
+    @apply text-3xl md:text-4xl font-bold tracking-tight text-slate-900 leading-[1.2] mb-6;
+  }
+
+  .section-p {
+    @apply text-base md:text-lg text-slate-600 font-medium leading-relaxed mb-8;
+  }
+}
